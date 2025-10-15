@@ -3,70 +3,70 @@
     style="display: block; margin: 0 auto"/>
 </p>
 
-# 3) NanoEdge AI Studio ile Edge-AI Çözümleri Geliştirme
-Empa Electronics tarafından düzenlenen Accelerators Workshops serimizin Uçta Yapay Zeka adımına hoş geldiniz.  
-Bu kılavuz, NanoEdge AI Studio kullanılarak geliştilecek "El Karakterleri Tanıma" uygulamamızın geliştirme ve kurulum adımlarında size rehberlik edecektir.
+# 3) Developing Edge-AI Solutions with NanoEdge AI Studio
 
-## Kurulum
-Öncelikle, aşağıdaki bağlantıyı kullanarak çalışma ortamı kurulum adımlarını takip ediniz.
-### ↳ [NanoEdge AI Studio Kurulum Kılavuzu](Kurulum.md)
-NanoEdge AI Studio programının kurulum adımlarını içerir.
+Welcome to the Edge AI step of the Accelerator Workshops series organized by Empa Electronics.  
+This guide covers installation and development steps for our "Hand Character Recognition" application built with NanoEdge AI Studio.
 
-## Uygulama
-### ↳ [NEAIS İle Edge-AI Çözümleri: El Karakteri Sınıflandırma](Uygulama.md)
-Aktivite içeriği olan "uçta yapay zeka" uygulamasının geliştirme adımlarını içerir.
+## Installation
+First, follow the setup steps at the link below to prepare the development environment.
+### ↳ [NanoEdge AI Studio Installation Guide](Installation.md)
+Contains the installation steps for NanoEdge AI Studio and related tools.
+
+## Application
+### ↳ [NEAIS Edge-AI: Hand Character Classification](Application.md)
+Contains the development steps for the edge AI application in this activity.
 
 ## NanoEdge AI Studio
+**1- What is NEAIS?**
+- **Helps embedded systems engineers** find the ideal AI model for their needs with minimal AI expertise.
+- Originally developed by **Cartesiam** (now part of ST) for MCUs running embedded C code.
 
-**1- NEAIS Nedir?**
-- **Gömülü sistem mühendislerinin**, minimum AI bilgisi ile, gereksinimleri için ideal AI modelini zahmetsizce bulmalarını sağlar.
-- İlk olarak **Cartesiam** (şimdi **ST**'ye ait) tarafından gömülü C yazılımı çalıştıran MCU'lar için geliştirilmiştir.
+**2- How does it work?**
+- **Runs locally on a PC**,
+- **Imports input data**,
+- Explores thousands of preprocessing, model and parameter combinations,
+- Outputs a **library** (model, preprocessing steps and functions) ready for embedding.
 
-**2- Nasıl çalışır?**
-- PC'de **yerel olarak** çalışır,
-- Girdi verilerini içeri alır,
-- Ön işlemeler, modeller ve parametrelerin binlerce kombinasyonunu keşfeder,
-- Bir **kütüphane** (model, ön işlemeleri ve fonksiyonları) oluşturur,
+**3- What it doesn't provide**
+- Does not provide input data; users must have **qualified data**.
+- Does not provide the final ready-to-run **C code** for the project (note: it provides example code snippets and libraries).
+- Primarily designed for **sensor applications**.
 
-**3- Neler yapamaz?**
-- Herhangi bir girdi verisi **sağlamaz**. **Kullanıcıların nitelikli veriye sahip olması gerekir.**
-- **Son projede** uygulanacak **hazır C kodu** sağlamaz.
-- NEAIS esas olarak **sensör uygulamaları** için yapılmıştır.
+**4- Features**
+- **No deep ML expertise** required.
+- **Efficient use of MCU memory**.
+- **Optimized for running on MCUs**.
 
-**4- Özellikler**
-- **ML uzmanlığı** gerektirmez.
-- MCU hafızasını **verimli** kullanır.
-- MCU'ların üzerinde çalışmak için optimize edilmiştir.
+**5- Typical Steps**
+- Configure project settings
+- Import signals
+- **Run benchmark**
+- Find and compare libraries (models)
+- **Test libraries**
+- **Embed on MCU**
 
-**5- Genel Adımlar**
-- Proje ayarlarını yapılandırma
-- Sinyalleri içe aktar
-- **Benchmark** uygula
-- Kütüphaneler (modeller) **bul ve karşılaştır**
-- Kütüphaneleri **test et**
-- **MCU'ya göm**
+**6- Benchmark steps**
+- Signal **preprocessing**
+- Explore **ML models**
+- Optimum **hyperparameter** search
 
-**6- Benchmark Adımları**
-- Sinyal **ön işleme**
-- ML modellerini **keşfetme**
-- Optimum **hiperparametre** tarama
-
-**7- Ön işleme süreçleri**
+**7- Preprocessing tools**
 - **Data Logger (DL)**
 - **Data Manipulation (DM)**
 - **Sampling Finder (SF)**
 - **Feature Importance (FI)**
 
-**8- Modeller**
+**8- Model types**
 - **Detect Anomalies (AD)**
-    - "Modellerin hedef ortama kendiliğinden uyum sağlamalarını ve anormallikleri kendiliğinden tespit etmelerini istiyorum."
+    - For adaptive, unsupervised anomaly detection that can learn on-device.
 - **Detect Outliers (O)**
-    - "Herhangi bir aykırı değeri tespit etmek istiyorum."
+    - Static model for outlier detection.
 - **Classify (C)**
-    - "Hangi sorunların meydana geldiğini isim isim bilmek istiyorum."
+    - Static model for n-class classification.
 - **Extrapolate (E)**
-    - "Düzeltici eylemler için zaman kazanmak amacıyla titreşim seviyesini önceden tahmin etmek istiyorum."
+    - Regression model for continuous target prediction.
 
-**Kaynaklar & Okuma Önerileri** 
+**References & Further Reading**
 
 1- [Wiki by STMicroelectronics - NanoEdge AI Studio](https://wiki.stmicroelectronics.cn/stm32mcu/wiki/AI:NanoEdge_AI_Studio)

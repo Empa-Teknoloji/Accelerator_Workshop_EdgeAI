@@ -3,24 +3,25 @@
     style="display: block; margin: 0 auto"/>
 </p>
 
-# 1) Vitis-AI ile FPGA Platformlarında AI Uygulamaları Geliştirme
+# 1) Developing AI Applications on FPGA Platforms with Vitis-AI
 
-Empa Electronics tarafından düzenlenen Accelerators Workshops etkinliğimize hoş geldiniz.  
-Bu kılavuz, açık kaynaklı makine öğrenimi kütüphaneleri ve literatür makine öğrenimi modelleri kullanılarak elde edilen bir derin öğrenme modelinin AMD ürünü FPGA platformlarında çözüm haline getirilme adımlarının uçtan uca incelendiği "YOLOv5 ile Kria Platformu Üzerinde Yaygın Nesnelerin Tespiti" uygulamamızın geliştirme adımlarında size rehberlik edecektir.
+Welcome to the Accelerator Workshops event organized by Empa Electronics.  
+This guide will walk you through the development steps for our application "Common Object Detection on the Kria Platform with YOLOv5", which demonstrates end-to-end deployment of a deep learning model on an AMD FPGA platform using open-source machine learning libraries and public model checkpoints.
 
-Aktivite içeriği olan uygulama, AMD tarafından Vitis-AI ortamı kullanılarak FPGA tabanlı platformlarda açık kaynaklı bir nesne algılama AI modelinin uçtan uca uygulanmasını içeren, ham bir depo kaynağından başlayarak uçta konuşlandırılmış bir çözüme kadar kapsamlı bir demo çalışmasıdır. Model, COCO veri setinden insan, araba, köpek, cep telefonu, şişe, dizüstü bilgisayar gibi 80 yaygın sınıfı 2 boyutlu sınırlayıcı kutular olarak tespit edebilmektedir. Aktivite içeriğindeki demo çalışması, model mimarisi incelemesi, mimari modifikasyonları, niceleme ve daha fazlası dahil olmak üzere uyumluluk için gerekli tüm adımları sunmayı amaçlamaktadır.
+The activity application is a comprehensive demo that begins from an upstream repository and covers the full workflow for deploying an open-source object detection AI model on FPGA-based platforms using the AMD Vitis-AI toolchain. The model can detect 80 common COCO classes (for example: person, car, dog, cell phone, bottle, laptop) as 2D bounding boxes. The demo aims to present all steps required for compatibility, including model architecture review, architectural modifications, quantization and more.
 
-Bu çalışma için resmi Ultralytics deposundaki YOLOv5s (small) model örneği kullanılmıştır. DPU uyumluluğu için iki farklı modifikasyon gereklidir ve uygulanmıştır: Model "kafa" (_head_) bölümünün ileri geçiş adımı, bazı son işleme adımlarını çıkarmak için değiştirilmiştir. Ayrıca, SiLU aktivasyonu Vitis-AI tarafından desteklenmediği için LeakyReLU aktivasyonu ile değiştirilmiştir. Değiştirilmiş model mimarisi, yeni bir model örneği elde etmek adına az miktarda eğitim verisi kullanılarak yeniden eğitilmiştir. Böylelikle, YOLOv5 model örneği tek bir DPU alt grafiği (_subgraph_) olarak elde edilmiştir.
-Değiştirilmiş YOLOv5 model örneği, DPU IP’sinin floating-point aritmetik kısıtlamaları nedeniyle modelin aritmetik olarak uyumlu bir versiyonunu oluşturmak için INT8'e niceleme (quantization) işlemine tabi olur. Diğer adımlarda, model mimarisi belirli bir DPU mimarisi kullanılarak derlenir ve bir Kria KV260 Vision AI Starter Kit üzerinde Vitis-AI Runtime GraphRunner API kullanılarak işletilebilir.
+For this workshop we used the Ultralytics YOLOv5s (small) model as a starting point. Two modifications were necessary for DPU compatibility and were applied: the model head forward pass was adjusted to remove some post-processing steps, and the SiLU activation was replaced with LeakyReLU because SiLU is not supported by Vitis-AI. The modified model architecture was retrained using a small amount of data to obtain a new model checkpoint. As a result, the YOLOv5 model was obtained as a single DPU subgraph.
 
-## Kurulum
-Öncelikle, aşağıdaki bağlantıyı kullanarak çalışma ortamı kurulum adımlarını takip ediniz.
-### ↳ [Çalışma Ortamı Kurulumu](Kurulum.md)
-Aktivite için gerekli program ve gereçlerin kurulum adımlarını içerir.
+The modified YOLOv5 model is then quantized to INT8 to create an arithmetically compatible version of the model for the DPU (floating-point arithmetic is limited on the DPU). In subsequent steps the model is compiled for a specific DPU architecture and can be executed on a Kria KV260 Vision AI Starter Kit using the Vitis-AI Runtime GraphRunner API.
 
-## Uygulama
-### ↳ [Vitis-AI İle FPGA Platformlarında AI Uygulamaları Geliştirme](./yolov5/Uygulama_Quantize_Compile_YoloV5s_using_Vitis-AI.ipynb)
-Aktivite içeriği olan "YOLOv5 ile Kria Platformu Üzerinde Yaygın Nesnelerin Tespiti" uygulamasının Vitis-AI çözümü tarafından sağlanan resmi Docker container ortamı üzerinde geliştirme adımlarını içerir.
+## Installation
+First, follow the setup steps at the link below to prepare the development environment.
+### ↳ [Development Environment Installation](Installation.md)
+Contains steps for installing the necessary software and tools for the activity.
 
-### ↳ [Model Implementasyonu: YOLOv5 ile Kria Platformu Üzerinde Yaygın Nesnelerin Tespiti](Implementasyon.md)
-Aktivite içeriği olan "YOLOv5 ile Kria Platformu Üzerinde Yaygın Nesnelerin Tespiti" uygulamasının AMD Kria KV260 Starter Kit platformu üzerinde test ve çözümleştirme adımlarını içerir.
+## Application
+### ↳ [Vitis-AI Development Notebook: Quantize & Compile YoloV5s](./yolov5/Application_Quantize_Compile_YoloV5s_using_Vitis-AI.ipynb)
+This notebook contains the development steps executed in the official Vitis-AI Docker container environment for the "Common Object Detection on the Kria Platform with YOLOv5" application.
+
+### ↳ [Model Implementation: Common Object Detection on Kria with YOLOv5](Implementation.md)
+Contains test and deployment steps for the activity on the AMD Kria KV260 Starter Kit platform.

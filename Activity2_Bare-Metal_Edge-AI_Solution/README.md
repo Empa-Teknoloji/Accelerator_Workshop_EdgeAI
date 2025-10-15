@@ -3,44 +3,46 @@
     style="display: block; margin: 0 auto"/>
 </p>
 
-# 2) ST Platformlarında Uçta Yapay Zeka Çözümleri Geliştirme
-Empa Electronics tarafından düzenlenen Accelerators Workshops etkinliğimize hoş geldiniz.  
-Bu kılavuz, modern makine öğrenimi kütüphaneleri ve standart yaklaşımlarla oluşturulacak "El Karakterleri Tanıma" uygulamamızın geliştirme adımlarında size rehberlik edecektir.
+# 2) Developing Edge-AI Solutions on ST Platforms
 
-Aktivite içeriği olan "El Karakteri Tanıma" uygulaması,  workshop için Empa Electronics tarafından tasarlanmış ve üretilmiş Kafa Kart (_Mind Board_) kullanılarak gerçekleştirilecektir. Kart üzerindeki ivmeölçer ve jiroskop sensörlerinden alınan toplam 6 eksenli sensör ölçümleri, bir yapay zeka modeline girdi olarak kullanılacak ve uç birim (Kafa Kart) üzerinde 5 farklı el karakterini sınıflandırmak amacıyla kullanılacaktır. Kafa Kart'ın elde tutulmasıyla gerçekleştirilecek el karakterleri görsel ile açıklanmıştır.
+Welcome to the Accelerator Workshops event organized by Empa Electronics.  
+This guide will walk you through the development steps for our "Hand Character Recognition" application, which will be implemented using modern machine learning libraries and common workflows.
 
-<img src="./Additionals/Hand-Characters.png" alt="Accelerator Workshops" width="800"/> 
+The activity's "Hand Character Recognition" demo is implemented on the custom Mind Board designed and produced by Empa Electronics. Six-axis sensor measurements from the board's accelerometer and gyroscope are used as input to an AI model running on the edge device to classify five different hand characters. An illustration of the hand characters and how the Mind Board is held is provided below.
 
-## Kurulum
-Öncelikle, aşağıdaki bağlantıyı kullanarak çalışma ortamı kurulum adımlarını takip ediniz.
-### ↳ [Çalışma Ortamı Kurulumu](Kurulum.md)
-Aktivite için gerekli program ve gereçlerin kurulum adımlarını içerir.
+<img src="./Additionals/Hand-Characters.png" alt="Hand Characters" width="800"/>
 
-## Uygulama
-### ↳ [STM32 Platformlarında Uçta Yapay Zeka Çözümleri: El Karakteri Tanıma (Tensorflow ile CNN)](https://colab.research.google.com/drive/1hXrLQyYdJ7H2DgL7fW6nQtDmb_dmDuge)
-Demo içeriği olan "El Karakteri Tanıma" uygulamasının **Tensorflow** kütüphanesi kullanılarak oluşturulmuş **CNN** modeli ile Google Colab üzerindeki geliştirilmesini konu alan uygulama adımlarını içerir.
-### ↳ [STM32 Platformlarında Uçta Yapay Zeka Çözümleri: El Karakteri Tanıma (scikit-learn ile Random Forest)](https://colab.research.google.com/drive/1bbg1bfcpoIIn0kcI18elS_EtdG5Iee-f)
-Demo içeriği olan "El Karakteri Tanıma" uygulamasının **scikit-learn** kütüphanesi kullanılarak oluşturulmuş **Random Forest** modeli ile Google Colab üzerindeki geliştirilmesini konu alan uygulama adımlarını içerir.
+## Installation
+First, follow the setup steps at the link below to prepare the development environment.
+### ↳ [Development Environment Installation](Installation.md)
+Contains installation steps for required software and tools for the activity.
 
-### ↳ [Model Testi (Yerel): El Karakteri Sınıflandırma](Uygulama_test_local_hand_character_recognition.ipynb)
-Aktivite içeriği olan "El Karakteri Tanıma" uygulamasının yerel ortamdaki test adımlarını içerir.
+## Application
+### ↳ [Hand Character Recognition (TensorFlow CNN)](https://colab.research.google.com/drive/1hXrLQyYdJ7H2DgL7fW6nQtDmb_dmDuge)
+This notebook contains development steps for the Hand Character Recognition demo using a CNN built with TensorFlow on Google Colab.
 
-### ↳ [STM32CubeAI Çıktısının MindBoard'a Implementasyonu](Ucbirim_Proje_Kurulum.md)
-Aktivite içeriği olan "El Karakteri Tanıma" uygulamasının uç birimde çözüm haline getirilmesi için gerekli implementasyon adımlarını içerir.
+### ↳ [Hand Character Recognition (scikit-learn Random Forest)](https://colab.research.google.com/drive/1bbg1bfcpoIIn0kcI18elS_EtdG5Iee-f)
+This notebook contains development steps for the Hand Character Recognition demo using a Random Forest implemented with scikit-learn on Google Colab.
 
-### ↳ [Model Testi (Uçbirim): El Karakteri Sınıflandırma](Uygulama_test_edge_hand_character_recognition.ipynb)
-Aktivite içeriği olan "El Karakteri Tanıma" uygulamasının uç birimdeki test adımlarını içerir.
+### ↳ [Model Testing (Local): Hand Character Classification](Application_test_local_hand_character_recognition.ipynb)
+Local test steps for the Hand Character Recognition application.
 
-## ST Platformlarında Uçta Yapay Zeka
+### ↳ [STM32CubeAI Output Implementation on the MindBoard](Edgedevice_Project_Installation.md)
+Implementation steps for deploying the Hand Character Recognition model on the Mind Board.
 
-**Tensorflow İle Makine Öğrenimi Modelleri Geliştirme**  
-Tensorflow, beraberinde barındırdığı Keras kütüphanesinin de gücüyle, modern derin öğrenme / yapay zeka uygulamalarının geliştirilmesine olanak sağlayan en önemli açık kaynaklı geliştirme kaynaklarından biridir. Tensorflow kütüphanesi, yüksek-seviye kullanım dili ve bu sayede edindiği kullanım kolaylığı sebebiyle workshop etkinliği içerisinde geliştirilecek derin öğrenme modelinin temeli olarak tercih edilmiştir.
+### ↳ [Model Testing (Edge): Hand Character Classification](Application_test_edge_hand_character_recognition.ipynb)
+Edge-device test steps for the Hand Character Recognition application.
 
-**STM32 Cube-AI İle Uçta Yapay Zeka Çözümleri Dağıtımı**  
-Geliştirilen bir makine öğrenmesi/derin öğrenme modelinin bir uç birimde, ST platformlarında tesis edilmesi, STMicroelectronics tarafından geliştirilen STM32CubeAI dönüşüm aracı ile sağlanabilmektedir. STM32CubeAI, pek çok popüler model formatı desteği ve dahili olarak gelen model sıkıştırma/derleme araçlarıyla geliştirilen modellerin kolayca çözümleştirilebilmesine imkan tanımaktadır.
+## Edge-AI on ST Platforms
 
-**Kaynaklar & Okuma Önerileri** 
+**Training Models with TensorFlow**  
+TensorFlow (and its Keras API) is one of the leading open-source frameworks for building deep learning models. Because of its ease of use and high-level API, TensorFlow was chosen as the base framework for the deep learning model developed in this workshop.
 
-1- [Tensorflow2 Quick Start for Beginners](https://www.tensorflow.org/tutorials/quickstart/beginner)
+**Deploying Edge-AI Solutions with STM32Cube.AI**  
+Deploying a trained ML/DL model on ST platforms can be done using the STM32Cube.AI conversion tool provided by STMicroelectronics. STM32Cube.AI supports many popular model formats and includes built-in model compression/compilation tools to help port models to embedded devices.
+
+**References & Further Reading**
+
+1- [TensorFlow 2 Quickstart for Beginners](https://www.tensorflow.org/tutorials/quickstart/beginner)
 
 2- [STM32Cube.AI - A Free Tool For Edge-AI Developers](https://stm32ai.st.com/stm32-cube-ai/)

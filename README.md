@@ -4,80 +4,80 @@
 </p>
 
 
-## Accelerator Workshops'a hoş geldiniz!
+## Welcome to the Accelerator Workshops!
 
-**Merhaba!**
+**Hello!**
+This open-source repository is provided by Empa Electronics for participants of our Accelerator Workshops. It contains materials and setup instructions so you can follow along with the workshop activities and experiment afterwards.
 
-Empa Electronics tarafından düzenlenen Accelerators Workshops etkinliğimize hoş geldiniz. Bu açık-kaynaklı repository, workshop etkiliğimizde kullanabileceğiniz tüm gereksinimleri edinebilmeniz ve aktivitelere kolaylıkla eşlik edebilmeniz için sizinle paylaşılmıştır.
+**Edge AI**  
+The deployment and operation of AI solutions can commonly be done in two different ways. One approach is cloud-based AI, where a model runs on a cloud server (for example AWS/Azure) and incoming data is sent to that model for inference. The other approach is edge AI, where a model runs locally on an edge device (for example a sensor board) and inference results are available directly on that device. Edge AI solutions bring several benefits, such as lower latency, reduced bandwidth usage, lower power consumption, and improved data privacy because data does not need to be sent to another platform for inference.
 
-**Uçta Yapay Zeka**  
-Bir uygulama için geliştirilen yapay zeka çözümlerinin işletilmesi modern sistemlerde iki farklı türde yapılabilmektedir. Bunlardan biri olan bulutta yapay zeka, bir yapay zeka modelinin bulut sunucu üzerinde (örneğin AWS/Azure gibi platformlarda) tesisi ve bu modele gönderilen veri örnekleri için alınan tahminlerin tekrar göndericiye iletilmesi usulüyle çalışmaktadır. Bir diğer alternatif olan uçta yapay zeka, bir modelin doğrudan çözüm için kullanılan bir uç birimde (_edge device_, örneğin: sensör kartı) tesis edilmesi ve girdi veriler için elde edilen tahminlerin doğrudan aynı platform üzerinde elde edilebilmesidir. Uçta yapay zeka çözümleri, verinin tahminleme için başka bir platforma gönderilmemesi sayesinde başta düşük gecikme, düşük bant genişliği, düşük güç tüketimi ve veri gizliliği gibi pek çok fayda sağlamaktadır.
+## Live Demo
+No setup is required to attend the live demo presentation in our Edge AI workshop. Demo source files are shared here for review and for use as reference material after the event.
 
-## Canlı Demo
-Uçta Yapay Zeka workshop etkinliğimizde gerçekleştirilecek canlı demo gösterimine katılım için herhangi bir kurulum ihtiyacı yoktur. Demo kaynak dosyaları, uygulama içeriklerinin incelenmesi ve etkinlik sonrası referans materyal olarak kullanımı amacıyla paylaşılmaktadır.
+### ↳ [1) Developing AI Applications on FPGA Platforms with Vitis-AI](Activity1_AI_Solution_with_Vitis-AI)
+**This activity covers using AI solutions on AMD FPGA platforms with Vitis-AI.** It is presented by the speaker and will not be interactive. The provided materials are intended for post-event experimentation.
 
-### ↳ [1) Vitis-AI ile FPGA Platformlarında AI Uygulamaları Geliştirme](Activity1_AI_Solution_with_Vitis-AI)
-Yapay zeka çözümlerinin FPGA tabanlı AMD platformlarında kullanımının uygulamalı anlatımını içerir. Bu aktivite, interaktif olarak yapılmayacak olup yalnızca konuşmacıların uygulamalı anlatımı içerir. Aktivite kaynağı olarak sağlanan içerikler, etkinlik sonrası deneyimleme amaçlıdır.
+## Workshop Activities
+For each workshop activity we provide setup instructions and environment materials. Follow the installation guides in each activity folder to prepare your workspace.
 
-## Çalıştay Aktiviteleri
-Uçta Yapay Zeka workshop etkinliğimizde gerçekleştirilecek aktivitelerde kullanılacak çalışma ortamları ve gerekli kurulumlar için sırasıyla her bir aktivite için oluşturulan kurulum kılavuzlarına giderek gerekli adımları uygulayınız. 
+### ↳ [2) Developing Edge-AI Solutions for ST MCU Platforms](Activity2_Bare-Metal_Edge-AI_Solution)
+This activity focuses on Tiny-ML-style edge AI solutions for STMicroelectronics platforms and includes hands-on exercises. It will be run interactively with participant involvement.
 
-### ↳ [2) ST MCU Platfromları İçin Edge-AI Çözümleri Geliştirme](Activity2_Bare-Metal_Edge-AI_Solution)
-Çoğunluğu Tiny-ML konseptine uygun "uçta yapay zeka" uygulamalarının ST Microelectronics ürünleri üzerinde çözümleştirilmesine yönelik uygulamalı anlatımı içerir. Bu aktivite, kullanıcıların katılımıyla interaktif olarak gerçekleştirilecektir.
-### ↳ [3) NanoEdge AI Studio ile Edge-AI Çözümleri Geliştirme](Activity3_NEAIS_for_Edge-AI_Deployment)
-Tiny-ML uygulamaları geliştirmede güçlü bir alternatif oluşturan NanoEdge AI Studio ile uçta yapay zeka uygulamaları geliştirme adımlarını içerir. Bu aktivite, kullanıcıların katılımıyla interaktif olarak gerçekleştirilecektir.
+### ↳ [3) Developing Edge-AI Solutions with NanoEdge AI Studio](Activity3_NEAIS_for_Edge-AI_Deployment)
+This activity demonstrates how to develop Tiny-ML applications using NanoEdge AI Studio and will be interactive.
 
-## Dizin Yapısı
-
-Repository içerisindeki her bir klasör, etkinliğimizde yer alacak bir yapay zeka çözümü uygulamasına ait çalışma ortamlarını ve gerekli kurulumları içermektedir.
+## Directory Structure
+Each top-level folder contains the materials and setup guides for a specific workshop activity:
 
 ```
 Workshop Repository
 ├── Activity1_AI_Solution_with_Vitis-AI
-│   ├── Kaynak Kod & Materyaller
-│   └── README.md (Aktivite-1 Kılavuzu)
+│   ├── Source code & materials
+│   └── README.md (Activity-1 Guide)
 ├── Activity2_Bare-Metal_Edge-AI_Solution
-│   ├── Kaynak Kod & Materyaller
-│   └── README.md (Aktivite-2 Kılavuzu)  
+│   ├── Source code & materials
+│   └── README.md (Activity-2 Guide)  
 └── Activity3_NEAIS_for_Edge-AI_Deployment
-    ├── Kaynak Kod & Materyaller
-    └── README.md (Aktivite-3 Kılavuzu) 
+    ├── Source code & materials
+    └── README.md (Activity-3 Guide) 
 ```
 
-## Ön Gereksinimler - Checklist
-Workshop etkiliğinde kullanılacak çalışma ortamlarının kurulumları sonrası hazırladığımız checklist ile gereksinimlerin kontrolünü sağlayabilirsiniz.
+## Prerequisites - Checklist
+Use the checklists below to verify your environment after completing the setup steps for each activity.
 
-**Aktivite-1  (_Etkinlik Sonrası Deneysel Kullanım Amaçlıdır_)**
-- [ ] Python3.8
+Activity-1 (For post-event experimentation)
+- [ ] Python 3.8
 - [ ] Docker
-- [ ] Vitis-AI Docker Container Ortamı
-- [ ] Aktivite-1 Kaynak Dosyaları
+- [ ] Vitis-AI Docker container environment
+- [ ] Activity-1 source files
 
-**Aktivite-2**
-- [ ] Colab Notebook Örneği (Kurulum Gerektirmez)
+Activity-2
+- [ ] Colab notebook example (no setup required)
 - [ ] STM32CubeIDE (STM32CubeMX & STM32CubeAI)
 - [ ] STM32CubeProgrammer
-- [ ] Aktivite-2 Kaynak Dosyaları
+- [ ] Activity-2 source files
 
-**Aktivite-3**
+Activity-3
 - [ ] NanoEdge AI Studio
 - [ ] STM32CubeIDE (STM32CubeMX)
 - [ ] STM32CubeProgrammer
-- [ ] Aktivite-3 Kaynak Dosyaları
+- [ ] Activity-3 source files
 
-## Güncellemeler
-Workshop etkinliğimizde gerekli çalışma ortamları üzerindeki güncellemeleri bu başlık altında takip edebilirsiniz.
+## Updates
+Keep an eye on this section for updates to the workshop materials and environment.
+
 ```
-Versiyon-1: 12 Şubat 2025  
-Tüm aktiviteler için temel bileşenleri içeren kılavuzlar repository içerisinde paylaşıldı.
+Version-1: 12 February 2025
+Initial release: basic guides for all activities were added to the repository.
 ```
 
-## Uyarılar
+## Notices
+If you have questions about the workshop setup or materials, please contact **ai@empa.com**.
 
-Aktivite çalışma ortamlarının kurulumlarıyla ilgili soru ve taleplerinizi **ai@empa.com** adresine iletebilirsiniz.
+To update your local copy of the workshop materials to the latest changes, open a terminal in the Workshop repository folder and run:
 
-Workshop aktiviteleri için sağlanan çalışma ortamlarının son hallerini edinmek için Güncellemeler başlığını kontrol ediniz. Kurulumlarını bitirmiş olduğunuz çalışma ortamınıza mevcut güncellemeleri eklemek için terminalinizde AI_Workshop klasörünü açınız ve "git pull" komutu ile güncellemeleri ekleyiniz:
-```
+```bash
 cd Workshop_Workspace/Accelerator-Workshops-EdgeAI
 git pull origin master
 ```
